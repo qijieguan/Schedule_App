@@ -1,4 +1,5 @@
 import { AiOutlineMenu } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -16,7 +17,20 @@ const Header = () => {
                 </div>
                 <AiOutlineMenu style={customStyle} onClick={SideToggle}/>
             </div>
-            <div className="Side-Panel"/>
+            <div className="Side-Panel" >
+            <div className="Side-Li">
+                    <Link to="/" style={linkStyle}>
+                        Home
+                    </Link>
+                </div>
+                <div className="Side-Li">
+                    <Link to="/calender" style={linkStyle}>
+                        Calender
+                    </Link>
+                </div>
+                <div className="Side-Li">TODO</div>
+                <div className="Side-Li">About</div>
+            </div>
         </div>
     );
 }
@@ -28,5 +42,12 @@ const customStyle = {
     position: 'absolute',
     cursor: 'pointer'
 }
+
+const linkStyle = {
+    textDecoration: 'none',
+    color: 'black',
+    display: 'block'
+}
+
 
 export default Header;

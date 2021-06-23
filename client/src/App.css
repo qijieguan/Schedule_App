@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-color: beige;
+  min-height: 900px;
+  height: auto;
 }
 
 .Header { 
@@ -22,9 +25,12 @@
 }
 
 .Side-Panel {
-  height: 600px;
+  top: '60px';
+  position: absolute;
+  height: 700px;
   width: 200px;
   background-color: darkorange;
+  border: 2px outset;
   border-radius: 0 0 5px 0;
   box-shadow: 0 0 10px 0 black;
   transform: translateX(-100%);
@@ -35,4 +41,34 @@
 .Side-Active {
   transform: translateX(0%);
 }
+
+.Side-Li {
+  line-height: 60px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  border-top: 2px outset;
+  border-bottom: 2px outset;
+  color: black;
+}
+
+.Calender {
+  height: 700px;
+  margin: 30px 0 0 2.5%;
+  width: 95%;
+  background-color: white;
+  box-shadow: 0 0 10px 0 black;
+}
+
+.month {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  font-family:'Times New Roman', Times, serif;
+  height: 70px;
+  line-height: 70px;
+  color: white;
+  background-color: cornflowerblue;
+}
+
 
