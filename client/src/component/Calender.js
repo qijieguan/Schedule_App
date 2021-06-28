@@ -1,15 +1,42 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
+import Date from './Date.js';
+
 
 const Calender = () => {
+
+
+    const [dates, setDates] = useState([]);
+
+    useEffect(() => {
+        let details = [];
+        for (let i = 0; i < 31; ++i) {
+            details.push({Day: (i + 1), Slot: [{id: 1, Time: ["0:00", "0:10"], Details: "Check Email"}, {id: 2, Time: ["0:10", "0:20"], Details: "Leave house"}]});
+        }
+        setDates(details);
+    }, []);
+
     return(
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <Link to='/' style={{width: '50px'}}>
                 <BiArrowBack style={customStyle}/>
             </Link>
             <div className="Calender">
-                <div className="month">
+                <div className="Month-Label">
                     January
+                </div>
+                <div className="Week">
+                    <div className="Week-Label">Sunday</div>
+                    <div className="Week-Label">Monday</div>
+                    <div className="Week-Label">Tuesday</div>
+                    <div className="Week-Label">Wednesday</div>
+                    <div className="Week-Label">Thursday</div>
+                    <div className="Week-Label">Friday</div>
+                    <div className="Week-Label">Saturday</div>
+                </div>
+                <div className="Date-Grid">
+                    {dates.map(date => <Date key={date.Day} date={date}/>)}
                 </div>
             </div>
         </div>
@@ -18,11 +45,8 @@ const Calender = () => {
 
 const customStyle = {
     fontSize: '60px',
-    color: 'white',
-    marginTop: '30px',
-    backgroundColor: 'green',
-    borderRadius: '10px',
-    boxShadow: '0 0 10px 0 black'
+    color: 'green',
+    margin: '20px 0 0 20px',
 }
 
 export default Calender;

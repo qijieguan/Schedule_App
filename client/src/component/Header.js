@@ -44,8 +44,10 @@ const customStyle = {
 }
 
 const linkStyle = {
+    fontSize: '16px',
+    fontWeight: 'bold',
     textDecoration: 'none',
-    color: 'black',
+    color: 'white',
     display: 'block'
 }
 
