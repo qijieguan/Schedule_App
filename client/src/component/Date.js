@@ -1,28 +1,45 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BiCommentAdd } from 'react-icons/bi';
 import ViewEvent from './ViewEvent.js';
 import AddEvent from './AddEvent.js';
+import uuid from 'react-uuid';
 
 const Date = ({ date }) => {
     
-    const [addItem, setAddItem] = useState(false);
+    const [isAdd, setIsAdd] = useState(false);
+    const [event, setEvent] = useState(date.Slot);
+
+    useEffect(() => {
+
+    }, [event])
 
     const onAdd = (isAdd) => {
-        setAddItem(isAdd);
+        setIsAdd(isAdd);
+    }
+
+    const addEvent = (item) => {
+        let detail = event;
+        detail.push(item);
+        setEvent(detail);
+        setIsAdd(false);
     }
 
     return(
         <div className="Date">
             <div style={flexBox}>
                 <div style={{marginLeft: '5px', fontSize: '20px'}}>{date.Day}</div>
-                <BiCommentAdd style={IconStyle1} onClick={() => setAddItem(true)}/>
+                <BiCommentAdd style={IconStyle1} onClick={() => setIsAdd(true)}/>
             </div>
-            { addItem ?
-                <AddEvent onAdd={onAdd}/>
+            { isAdd ?
+                <AddEvent onAdd={onAdd} addEvent={addEvent}/>
                 :
                 ""
             }
-            {date.Slot.map(event => <ViewEvent key={event.id} event={event}/>)}
+            { event.length > 0 ?
+                date.Slot.map(event => <ViewEvent key={uuid()} event={event}/>)
+                :
+                ""
+            }
         </div>
     );
 }

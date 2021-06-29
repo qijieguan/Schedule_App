@@ -12,7 +12,7 @@ const Calender = () => {
     useEffect(() => {
         let details = [];
         for (let i = 0; i < 31; ++i) {
-            details.push({Day: (i + 1), Slot: [{id: 1, Time: ["0:00", "0:10"], Details: "Check Email"}, {id: 2, Time: ["0:10", "0:20"], Details: "Leave house"}]});
+            details.push({Day: (i + 1), Slot: []});
         }
         setDates(details);
     }, []);

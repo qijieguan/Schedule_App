@@ -6,7 +6,6 @@ const Header = () => {
     const SideToggle = () => {
         const nav = document.querySelector(".Side-Panel");
         nav.classList.toggle("Side-Active");
-        console.log("Side menu clicked!");
     }
 
     return (
