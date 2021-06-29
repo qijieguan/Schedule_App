@@ -45,7 +45,7 @@ const Calender = () => {
 
 const customStyle = {
     fontSize: '60px',
-    color: 'green',
+    color: 'darkorange',
     margin: '20px 0 0 20px',
 }
 

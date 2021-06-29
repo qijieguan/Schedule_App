@@ -10,7 +10,7 @@ const Date = ({ date }) => {
     const [event, setEvent] = useState(date.Slot);
 
     useEffect(() => {
-
+        console.log("render");
     }, [event])
 
     const onAdd = (isAdd) => {
@@ -18,10 +18,17 @@ const Date = ({ date }) => {
     }
 
     const addEvent = (item) => {
-        let detail = event;
-        detail.push(item);
-        setEvent(detail);
+        let result = event;
+        item.id = uuid();
+        result.push(item);
+        setEvent(result);
         setIsAdd(false);
+    }
+
+    const onDelete = (eventID) => {
+        let result = event;
+        result = result.filter(e => e.id !== eventID);
+        setEvent(result);
     }
 
     return(
@@ -36,7 +43,7 @@ const Date = ({ date }) => {
                 ""
             }
             { event.length > 0 ?
-                date.Slot.map(event => <ViewEvent key={uuid()} event={event}/>)
+                event.map(event => <ViewEvent key={event.id} event={event} onDelete={onDelete}/>)
                 :
                 ""
             }
@@ -44,10 +51,10 @@ const Date = ({ date }) => {
     );
 }
 
-
 const IconStyle1 = {
     fontSize: '24px',
-    color: 'gray'
+    color: 'gray',
+    cursor: 'pointer'
 }
 
 const flexBox = {

@@ -5,8 +5,8 @@ import { FaLeaf } from 'react-icons/fa';
 
 const AddEvent = ({ onAdd, addEvent }) => {
 
-    const [startTime, setStartTime] = useState("");
-    const [endTime, setEndTime] = useState("");
+    const [startTime, setStartTime] = useState("00:00");
+    const [endTime, setEndTime] = useState("00:00");
     const [details, setDetails] = useState("");
 
     const handleChange = event => {
@@ -69,18 +69,20 @@ const AddEvent = ({ onAdd, addEvent }) => {
 
 const AddLogo = {
     fontSize: '20px',
-    color: 'darkorchid'
+    color: 'darkorchid',
 }
 
 const IconStyle1 = {
     fontSize: '24px',
-    color: 'darkorchid'
+    color: 'darkorchid',
+    cursor: 'pointer'
 }
 
 const IconStyle2 = {
     fontSize: '24px',
-    marginLeft: '20px',
-    color: 'red'
+    marginLeft: '25px',
+    color: 'red',
+    cursor: 'pointer'
 }
 
 const marginStyle = {
@@ -91,7 +93,7 @@ const flexBox = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    margin: '5px 0 0 60px'
+    margin: '10px 0 10px 60px'
 }
 
 export default AddEvent;

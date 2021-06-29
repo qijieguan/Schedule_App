@@ -17,18 +17,17 @@ const Header = () => {
                 <AiOutlineMenu style={customStyle} onClick={SideToggle}/>
             </div>
             <div className="Side-Panel" >
-            <div className="Side-Li">
-                    <Link to="/" style={linkStyle}>
+                <div style={borderStyle}>
+                    <Link to="/" className="Side-Li">
                         Home
                     </Link>
-                </div>
-                <div className="Side-Li">
-                    <Link to="/calender" style={linkStyle}>
+                    <Link to="/calender" className="Side-Li">
                         Calender
                     </Link>
+                    
+                    <div className="Side-Li">TODO</div>
+                    <div className="Side-Li">About</div>
                 </div>
-                <div className="Side-Li">TODO</div>
-                <div className="Side-Li">About</div>
             </div>
         </div>
     );
@@ -42,13 +41,10 @@ const customStyle = {
     cursor: 'pointer'
 }
 
-const linkStyle = {
-    fontSize: '16px',
-    fontWeight: 'bold',
-    textDecoration: 'none',
-    color: 'white',
-    display: 'block'
-}
 
+const borderStyle = {
+    borderBottom: '1px solid',
+    borderColor: 'darkorange'
+}
 
 export default Header;
