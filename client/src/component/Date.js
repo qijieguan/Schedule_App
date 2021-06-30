@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { BiCommentAdd } from 'react-icons/bi';
 import ViewEvent from './ViewEvent.js';
-import AddEvent from './AddEvent.js';
+import AddForm from './EventForm.js';
 import uuid from 'react-uuid';
+
 
 const Date = ({ date }) => {
     
@@ -10,25 +11,36 @@ const Date = ({ date }) => {
     const [event, setEvent] = useState(date.Slot);
 
     useEffect(() => {
-        console.log("render");
-    }, [event])
+        if (event.length > 0) {
+            console.log(event);
+        } 
+    }, [event]);
 
     const onAdd = (isAdd) => {
         setIsAdd(isAdd);
     }
 
     const addEvent = (item) => {
-        let result = event;
         item.id = uuid();
-        result.push(item);
-        setEvent(result);
+        let result = [...event, item];
         setIsAdd(false);
+        setEvent(result);
     }
 
     const onDelete = (eventID) => {
         let result = event;
         result = result.filter(e => e.id !== eventID);
         setEvent(result);
+    }
+
+    const onEdit = (edits) => {    
+        let result = event; 
+        result.forEach(e => {
+            if (e.id === edits.id) { 
+                e.Details = edits.Details;
+                setEvent(result);
+            }
+        });
     }
 
     return(
@@ -38,12 +50,14 @@ const Date = ({ date }) => {
                 <BiCommentAdd style={IconStyle1} onClick={() => setIsAdd(true)}/>
             </div>
             { isAdd ?
-                <AddEvent onAdd={onAdd} addEvent={addEvent}/>
+                <AddForm onAdd={onAdd} addEvent={addEvent}/>
                 :
                 ""
             }
             { event.length > 0 ?
-                event.map(event => <ViewEvent key={event.id} event={event} onDelete={onDelete}/>)
+                event.map(event => 
+                    <ViewEvent key={event.id} event={event} onDelete={onDelete} onEdit={onEdit}/>
+                )
                 :
                 ""
             }
@@ -62,4 +76,5 @@ const flexBox = {
     flexDirection: 'row',
     justifyContent: 'space-between'
 }
+
 export default Date;

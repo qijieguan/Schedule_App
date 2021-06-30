@@ -3,7 +3,7 @@ import { AiFillCloseSquare } from 'react-icons/ai';
 import { FaLeaf } from 'react-icons/fa';
 
 
-const AddEvent = ({ onAdd, addEvent }) => {
+const AddForm = ({ onAdd, addEvent }) => {
 
     const [startTime, setStartTime] = useState("00:00");
     const [endTime, setEndTime] = useState("00:00");
@@ -96,4 +96,4 @@ const flexBox = {
     margin: '10px 0 10px 60px'
 }
 
-export default AddEvent;
+export default AddForm;
