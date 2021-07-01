@@ -246,9 +246,62 @@
   background-color: white;
 }
 
+.Task-Container {
+  margin: 50px 0 0 5%;
+  height: auto;
+  width: 90%;
+  overflow: hidden;
+}
+
+.Task-Form {
+  margin-left: 125px;
+  float: left;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  width: 18%;
+  background-color: rgb(200, 200, 200);
+  border: 1px solid gray;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.Task-Form:hover {
+  box-shadow: 3px 3px 3px 3px gray;
+}
+
+.List {
+  float: left;
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0 0 20px 100px;
+  min-height: 400px;
+  height: auto;
+  width: 20%;
+  background-color: rgb(250, 200, 120);
+  border: 1px solid gray;
+  box-shadow: 1px 1px 1px 1px gray;
+  cursor: pointer;
+}
+
+.List-Header {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: cursive;
+  display: flex;
+  justify-content: space-around;
+}
+
 a {
   text-decoration: none;
   display: block;
+}
+
+.List:hover {
+  box-shadow: 3px 3px 3px 3px gray;
 }
 
 input {

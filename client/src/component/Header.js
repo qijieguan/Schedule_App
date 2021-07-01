@@ -24,8 +24,9 @@ const Header = () => {
                     <Link to="/calender" className="Side-Li">
                         Calender
                     </Link>
-                    
-                    <div className="Side-Li">TODO</div>
+                    <Link to="/task" className="Side-Li">
+                        Task
+                    </Link>
                     <Link to="/about" className="Side-Li">
                         About
                     </Link>
