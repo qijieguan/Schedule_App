@@ -24,9 +24,11 @@ const AddForm = ({ onAdd, addEvent }) => {
     const handleSubmit = () => {
         if (!startTime || !endTime || !details) {}
         else {
-           return addEvent({Time: [startTime, endTime], Details: details});
+           let startM = document.getElementById('startM').value;
+           let endM = document.getElementById('endM').value; 
+           return addEvent({Time: [startTime, startM, endTime, endM], Details: details});
         }
-    }
+    } 
 
     return(
         <div className="Add-Slot">
@@ -34,23 +36,35 @@ const AddForm = ({ onAdd, addEvent }) => {
                 <div> <span style={AddLogo}>Add Event </span> <FaLeaf style={IconStyle1}/></div>
                 <AiFillCloseSquare style={IconStyle2} onClick={() => onAdd(false)}/>
             </div>
-            <div className="time-input" style={marginStyle}>
-                <span>Time:  </span>
-                <input style={{width: '70px', height: '30px'}} 
-                    name="start"
-                    onChange={handleChange}
-                    value={startTime}
-                    placeholder="0:00"
-                />
-                <span> to </span>
-                <input style={{width: '70px', height: '30px'}}
-                    name="end"
-                    onChange={handleChange}
-                    value={endTime}
-                    placeholder="0:00"
-                />
+            <div className="time-format" style={marginStyle}>
+                <div style={{display: 'flex'}}>
+                    <span style={{margin: '5px 5px 0 0'}}>Time:  </span>
+                    <span style={{display: 'block'}}>
+                        <input style={inputStyle} 
+                            name="start"
+                            onChange={handleChange}
+                            value={startTime}
+                            placeholder="0:00"
+                        />
+                        <select id="startM" style={selectStyle}>
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                        <span style={{marginLeft: '5px'}}> to </span>
+                        <input style={inputStyle}
+                            name="end"
+                            onChange={handleChange}
+                            value={endTime}
+                            placeholder="0:00"
+                        />
+                        <select id= "endM"style={selectStyle}>
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </span>
+                </div>
             </div>
-            <div className="event-detail" style={marginStyle}>
+            <div className="event-input" style={marginStyle}>
                 <span>Details: </span>
                 <textarea 
                     name="details"
@@ -86,7 +100,17 @@ const IconStyle2 = {
 }
 
 const marginStyle = {
-    margin: '0 0 15px 10px'
+    margin: '10px 0 15px 15px'
+}
+
+const inputStyle = {
+    width: '70px', 
+    height: '30px'
+}
+
+const selectStyle = {
+    width: '60px', 
+    height: '34px'
 }
 
 const flexBox = {

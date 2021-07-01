@@ -9,12 +9,13 @@ const Home = () => {
     }
 
     return(
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <div style={customStyle}>
-                Hello! Do you need to be on top of your schedule? Use Scheduler!
-            </div>
+        <div className="Home">
+            <p style={customStyle}>
+                Hello! I am Qi Jie. Do you need to be on top of your schedule? Use Scheduler! 
+                For more information, click the About tab on the menu! 
+            </p>
             <BsAlarm
-                style={iconStyle}
+                className="Alarm-Clock"
                 onClick={SideToggle}
             />
         </div>
@@ -29,13 +30,5 @@ const customStyle = {
     width: '60%',
     marginTop: '12%'
 };
-
-const iconStyle = {
-    color: 'black',
-    fontSize: '250px',
-    top: '400px',
-    position: 'absolute',
-    cursor: 'pointer'
-}
 
 export default Home;

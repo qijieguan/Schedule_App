@@ -5,7 +5,7 @@
 .App {
   text-align: center;
   background-color: beige;
-  min-height: 1200px;
+  min-height: 1000px;
   height: auto;
   mix-blend-mode: unset;
 }
@@ -39,7 +39,7 @@
   box-shadow: 0 0 10px 0 black;
   transform: translateX(-100%);
   transition: transform 0.5s ease-in;
-  z-index: 1;
+  z-index: 3;
 }
 
 .Side-Active {
@@ -63,21 +63,22 @@
 .Calender {
   min-height: 1000px;
   height: auto;
-  margin: 25px 0 0 2%;
-  width: 96%;
-  background-color: white;
-  box-shadow: 0 0 10px 0 black;
+  width: 100%;
+  background-color: rgb(56, 56, 56);
+  box-shadow: 10px 0 10px 0 black;
+  border-radius: 25px;
 }
 
 .Month-Label {
   text-align: center;
-  font-size: 36px;
+  font-size: 40px;
   font-weight: bold;
   font-family:'Times New Roman', Times, serif;
   height: 70px;
   line-height: 70px;
-  color: white;
-  background-color: red;
+  color: black;
+  background-color: darkorange;
+  border-radius: 25px 25px 0 0;
 }
 
 .Week {
@@ -92,6 +93,7 @@
   line-height: 60px;
   font-size: 20px;
   font-weight: bold;
+  color: darkorange;
 }
 
 .Date-Grid {
@@ -100,7 +102,8 @@
   grid-auto-rows: minmax(150px, auto);
   border-top: 3px solid;
   border-left: 3px solid;
-  border-color: red;
+  color: darkorange;
+  border-color: darkorange;
   margin-left: 1%;
   width: 98%;
 }
@@ -111,7 +114,7 @@
   font-weight: bold;
   border-right: 3px solid;
   border-bottom: 3px solid;
-  border-color: red;
+  border-color: darkorange;
 }
 
 .Add-Slot {
@@ -127,7 +130,8 @@
   box-shadow: 0 0 10px 0 black;
   border: 1px solid;
   border-radius: 5px;
-  background-color: white;
+  color: black;
+  background-color: rgb(240, 240, 240);
   z-index: 2;
 }
 
@@ -176,7 +180,7 @@
   margin-left: 2.5%;
   width: 95%;
   color: white;
-  background-color: darkslateblue;
+  background-color: darkorchid;
   font-size: 14px;
   border-radius: 10px;
   box-shadow: 0 0 4px 0 black;
@@ -203,6 +207,45 @@
   z-index: 2;
 }
 
+.About-Container {
+  display: flex;
+  flex-direction: column;
+  height: 1000px;
+  width: 100%;
+  background-color: rgb(56, 56, 56);
+  color: white; 
+}
+
+.About-App {
+  height: 500px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  box-shadow: 0 0 100px 0 black;
+  z-index: 1;
+}
+
+.About-Header {
+  text-align: center;
+  margin-top: 70px;
+  font-size: 50px;
+  font-weight: bold;
+  color: darkorange;
+}
+
+.About-Body {
+  margin: 75px 0 0 10%;
+  width: 80%;
+  font-size: 20px;
+  font-weight: bold;
+  color: darkorange;
+}
+
+.About-Me {
+  height: 500px;
+  width: 100%;
+  background-color: white;
+}
+
 a {
   text-decoration: none;
   display: block;
@@ -210,6 +253,16 @@ a {
 
 input {
   width: 80%;
+  border: 1px solid gray;
+  box-shadow: 0 0 1px 0 black;
+  margin-bottom: 10px;
+}
+
+select {
+  border-top: 1px solid gray;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  box-shadow: 0 0 1px 0 black;
 }
 
 textarea {
@@ -217,4 +270,48 @@ textarea {
   width: 90%;
   min-height: 75px;
   height: auto;
+  border: 1px solid gray;
+  box-shadow: 0 0 1px 0 black;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  height: 1000px;
+}
+
+.Home:hover {
+  background-color: rgb(56, 56, 56);
+  color: darkorange;
+}
+
+.Alarm-Clock {
+  color: black;
+  font-size: 250px;
+  top: 400px;
+  position: absolute;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.Alarm-Clock:hover {
+  color: darkorange;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }

@@ -21,13 +21,13 @@ const ViewEvent = ({ event, onDelete, onEdit }) => {
             onMouseLeave={() => setViewItem(false)}
         >
             <div className="Slot">
-                <span>{event.Time[0]} to {event.Time[1]}</span>
+                <span>{event.Time[0]} {event.Time[1]} to {event.Time[2]} {event.Time[3]}</span>
             </div>
             {viewItem ?
                 <div className="Slot-Expand">
-                    <div style={{marginBottom: '20px', width: '100%'}}> 
+                    <div style={{marginBottom: '20px', width: '100%', color: 'black'}}> 
                         <span style={fontStyle}>Time: </span>   
-                        {event.Time[0]} to {event.Time[1]}
+                        {event.Time[0]} {event.Time[1]} to {event.Time[2]} {event.Time[3]}
                     </div>
                     <div style={heightStyle}> 
                         <span style={fontStyle}>Details: </span> 
@@ -60,11 +60,13 @@ const ViewEvent = ({ event, onDelete, onEdit }) => {
 const heightStyle = {
     minHeight: '100px',
     height: 'auto',
+    color: 'black'
 }
 
 const fontStyle = {
     fontSize: '16px',
     fontWeight: 'bold',
+    color: 'black'
 }
 
 const flexBox = {

@@ -26,7 +26,9 @@ const Header = () => {
                     </Link>
                     
                     <div className="Side-Li">TODO</div>
-                    <div className="Side-Li">About</div>
+                    <Link to="/about" className="Side-Li">
+                        About
+                    </Link>
                 </div>
             </div>
         </div>
