@@ -1,27 +1,27 @@
 import { useState, useEffect } from 'react';
-import CreateTaskList from './TaskForm.js';
+import CreateTaskList from './ListCreate.js';
 import List from './TaskList.js';
 import uuid from 'react-uuid';
 
 const Task = () => {
 
-    const [TaskList, setTaskList] = useState([]);
+    const [ListArray, setListArray] = useState([]);
 
     useEffect(() => {
 
-    }, [TaskList]);
+    }, [ListArray]);
 
-    const onAdd = () => {
-        setTaskList([...TaskList, {id: uuid()}])
+    const onCreate = () => {
+        setListArray([...ListArray, {id: uuid(), Tasks: []}])
     }
 
     return(
         <div>
             <div className="Task-Container">
-                <CreateTaskList onAdd={onAdd}/>
+                <CreateTaskList onCreate={onCreate}/>
                 {
-                    TaskList.length > 0 ?
-                    TaskList.map(list => <List key={list.id} list={list}/>)
+                    ListArray.length > 0 ?
+                    ListArray.map(list => <List key={list.id} list={list}/>)
                     :
                     ""
                 }

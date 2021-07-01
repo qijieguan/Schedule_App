@@ -4,7 +4,7 @@ const ViewEvent = ({ event, onDelete, onEdit }) => {
 
     const [viewItem, setViewItem] = useState(false);
     const [isEdit, setIsEdit] = useState(false);
-    const [details, setDetails] = useState(event.Details);
+    const [details, setDetails] = useState(event.Content);
 
     const handleEdit = event => {
         setDetails(event.target.value);
@@ -12,7 +12,7 @@ const ViewEvent = ({ event, onDelete, onEdit }) => {
 
     const handleSubmit = async () => {
         await setIsEdit(false);
-        onEdit({id: event.id, Details: details});
+        onEdit({id: event.id, Content: details});
     }
 
     return (

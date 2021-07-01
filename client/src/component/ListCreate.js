@@ -1,9 +1,9 @@
 import { AiFillPlusCircle } from 'react-icons/ai';
 
-const CreateTaskList = ({ onAdd }) => {
+const CreateTaskList = ({ onCreate }) => {
 
     return(
-        <div className="Task-Form" onClick={() => onAdd()}>
+        <div className="Create-List" onClick={() => onCreate()}>
             <AiFillPlusCircle
                 color="gray"
                 size={40}

@@ -26,7 +26,7 @@ const AddForm = ({ onAdd, addEvent }) => {
         else {
            let startM = document.getElementById('startM').value;
            let endM = document.getElementById('endM').value; 
-           return addEvent({Time: [startTime, startM, endTime, endM], Details: details});
+           return addEvent({Time: [startTime, startM, endTime, endM], Content: details});
         }
     } 
 

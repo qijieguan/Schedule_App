@@ -37,7 +37,7 @@ const Date = ({ date }) => {
         let result = event; 
         result.forEach(e => {
             if (e.id === edits.id) { 
-                e.Details = edits.Details;
+                e.Content = edits.Content;
                 setEvent(result);
             }
         });

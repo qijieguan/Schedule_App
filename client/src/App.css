@@ -176,6 +176,7 @@
 .Slot {
   text-align: center;
   height: 20px;
+  height: auto;
   margin-top: 10px;
   margin-left: 2.5%;
   width: 95%;
@@ -253,7 +254,7 @@
   overflow: hidden;
 }
 
-.Task-Form {
+.Create-List {
   margin-left: 125px;
   float: left;
   display: inline-flex;
@@ -268,7 +269,11 @@
   cursor: pointer;
 }
 
-.Task-Form:hover {
+.List-Container {
+  display: flex;
+}
+
+.Create-List:hover {
   box-shadow: 3px 3px 3px 3px gray;
 }
 
@@ -283,7 +288,6 @@
   background-color: rgb(250, 200, 120);
   border: 1px solid gray;
   box-shadow: 1px 1px 1px 1px gray;
-  cursor: pointer;
 }
 
 .List-Header {
@@ -302,6 +306,38 @@ a {
 
 .List:hover {
   box-shadow: 3px 3px 3px 3px gray;
+}
+
+.List-Body {
+  margin-top: 15px;
+  min-height: 250px;
+  height: auto;
+}
+
+.Task-UL {
+  height: 250px;
+  height: auto;
+}
+
+.Task-Li {
+  height: auto;
+  width: 90%;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: cursive;
+  letter-spacing: 1px;
+  word-wrap: break-word;
+}
+
+
+.List-Footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+  height: 35px;
+  cursor: pointer;
 }
 
 input {
