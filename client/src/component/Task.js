@@ -1,18 +1,34 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import CreateTaskList from './ListCreate.js';
 import List from './TaskList.js';
 import uuid from 'react-uuid';
+import { useSelector, useDispatch } from 'react-redux';
+import { setList } from './actions/index'
 
 const Task = () => {
 
-    const [ListArray, setListArray] = useState([]);
+    const ListArray = useSelector(state => state.listArray);
+    const dispatch = useDispatch();
 
     useEffect(() => {
 
-    }, [ListArray]);
+    }, []);
 
     const onCreate = () => {
-        setListArray([...ListArray, {id: uuid(), Tasks: []}])
+        dispatch(setList([...ListArray, {id: uuid(), Tasks: []}]));
+    }
+
+    const onDelete = (listID) => {
+        dispatch(setList(ListArray.filter(list => list.id !== listID)));
+    }
+
+    const onAdd = (list) => {
+        ListArray.forEach(element => {
+            if (element.id === list.id) {
+                element.Tasks = list.Tasks
+            }    
+        });
+        dispatch(setList(ListArray));
     }
 
     return(
@@ -21,7 +37,7 @@ const Task = () => {
                 <CreateTaskList onCreate={onCreate}/>
                 {
                     ListArray.length > 0 ?
-                    ListArray.map(list => <List key={list.id} list={list}/>)
+                    ListArray.map(list => <List key={list.id} list={list} onDelete={onDelete} onAdd={onAdd}/>)
                     :
                     ""
                 }

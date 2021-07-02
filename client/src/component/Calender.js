@@ -1,21 +1,23 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
 import Date from './Date.js';
+import { useSelector, useDispatch } from 'react-redux';
+import { setDate } from './actions/index';
 
 
 const Calender = () => {
 
+    const DateArray = useSelector(state => state.dateArray);
+    const dispatch = useDispatch();
 
-    const [dates, setDates] = useState([]);
-
-    useEffect(() => {
-        let details = [];
-        for (let i = 0; i < 31; ++i) {
-            details.push({Day: (i + 1), Slot: []});
-        }
-        setDates(details);
-    }, []);
+    const onUpdate = (date) => {
+        DateArray.forEach(element => {
+            if (element.Day === date.Day) {
+                element = date;
+            }
+        });
+        dispatch(setDate(DateArray));
+    }
 
     return(
         <div style={{display: 'flex', flexDirection: 'column'}}>
@@ -36,7 +38,11 @@ const Calender = () => {
                     <div className="Week-Label">Saturday</div>
                 </div>
                 <div className="Date-Grid">
-                    {dates.map(date => <Date key={date.Day} date={date}/>)}
+                    {DateArray.map(date => 
+                        <Date key={date.Day} date={date}
+                            onUpdate={onUpdate}
+                        />
+                    )}
                 </div>
             </div>
         </div>

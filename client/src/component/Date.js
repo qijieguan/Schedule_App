@@ -5,16 +5,14 @@ import AddForm from './EventForm.js';
 import uuid from 'react-uuid';
 
 
-const Date = ({ date }) => {
+const Date = ({ date, onUpdate }) => {
     
     const [isAdd, setIsAdd] = useState(false);
-    const [event, setEvent] = useState(date.Slot);
+    const [Render, setRender] = useState(false);
 
     useEffect(() => {
-        if (event.length > 0) {
-            console.log(event);
-        } 
-    }, [event]);
+       
+    }, [Render]);
 
     const onAdd = (isAdd) => {
         setIsAdd(isAdd);
@@ -22,25 +20,24 @@ const Date = ({ date }) => {
 
     const addEvent = (item) => {
         item.id = uuid();
-        let result = [...event, item];
+        date.Slot = [...date.Slot, item];
+        onUpdate(date);
         setIsAdd(false);
-        setEvent(result);
     }
 
     const onDelete = (eventID) => {
-        let result = event;
-        result = result.filter(e => e.id !== eventID);
-        setEvent(result);
+        date.Slot = date.Slot.filter(e => e.id !== eventID);  
+        onUpdate(date);
     }
 
-    const onEdit = (edits) => {    
-        let result = event; 
-        result.forEach(e => {
+    const onEdit = (edits) => {   
+        date.Slot.forEach(e => {
             if (e.id === edits.id) { 
                 e.Content = edits.Content;
-                setEvent(result);
             }
         });
+        onUpdate(date);
+        setRender(!Render);
     }
 
     return(
@@ -54,8 +51,8 @@ const Date = ({ date }) => {
                 :
                 ""
             }
-            { event.length > 0 ?
-                event.map(event => 
+            { date.Slot.length > 0 ?
+                date.Slot.map(event => 
                     <ViewEvent key={event.id} event={event} onDelete={onDelete} onEdit={onEdit}/>
                 )
                 :
