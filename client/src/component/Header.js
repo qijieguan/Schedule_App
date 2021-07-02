@@ -1,33 +1,34 @@
 import { AiOutlineMenu } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
+
 const Header = () => {
 
     const SideToggle = () => {
-        const nav = document.querySelector(".Side-Panel");
-        nav.classList.toggle("Side-Active");
+        const nav = document.querySelector(".side-panel");
+        nav.classList.toggle("side-active");
     }
 
     return (
         <div>
-            <div className="Header">
-                <div className="Logo">
+            <div className="header">
+                <div className="logo">
                     SCHEDULER
                 </div>
                 <AiOutlineMenu style={customStyle} onClick={SideToggle}/>
             </div>
-            <div className="Side-Panel" >
+            <div className="side-panel" >
                 <div style={borderStyle}>
-                    <Link to="/" className="Side-Li">
+                    <Link to="/" className="side-li">
                         Home
                     </Link>
-                    <Link to="/calender" className="Side-Li">
+                    <Link to="/calender" className="side-li">
                         Calender
                     </Link>
-                    <Link to="/task" className="Side-Li">
+                    <Link to="/task" className="side-li">
                         Task
                     </Link>
-                    <Link to="/about" className="Side-Li">
+                    <Link to="/about" className="side-li">
                         About
                     </Link>
                 </div>

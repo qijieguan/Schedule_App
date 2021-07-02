@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+
 const ViewEvent = ({ event, onDelete, onEdit }) => {
 
     const [viewItem, setViewItem] = useState(false);
@@ -16,15 +17,15 @@ const ViewEvent = ({ event, onDelete, onEdit }) => {
     }
 
     return (
-        <div className="Slot-Container"
+        <div className="slot-container"
             onMouseOver={() => setViewItem(true)} 
             onMouseLeave={() => setViewItem(false)}
         >
-            <div className="Slot">
+            <div className="slot">
                 <span>{event.Time[0]} {event.Time[1]} to {event.Time[2]} {event.Time[3]}</span>
             </div>
             {viewItem ?
-                <div className="Slot-Expand">
+                <div className="slot-expand">
                     <div style={{marginBottom: '20px', width: '100%', color: 'black'}}> 
                         <span style={fontStyle}>Time: </span>   
                         {event.Time[0]} {event.Time[1]} to {event.Time[2]} {event.Time[3]}
@@ -42,11 +43,11 @@ const ViewEvent = ({ event, onDelete, onEdit }) => {
                         }   
                     </div> 
                     {isEdit ?
-                        <button style={buttonStyle3} onClick={handleSubmit}>Confirm</button>
+                        <button className="btn" style={buttonStyle3} onClick={handleSubmit}>Confirm</button>
                         :
                         <div style={flexBox}>
-                            <button style={buttonStyle1} onClick={() => onDelete(event.id)}>Delete</button>
-                            <button style={buttonStyle2} onClick={() => {setIsEdit(true)}}>Edit</button>
+                            <button className="btn" style={buttonStyle1} onClick={() => onDelete(event.id)}>Delete</button>
+                            <button className="btn" style={buttonStyle2} onClick={() => {setIsEdit(true)}}>Edit</button>
                         </div>
                     }   
                 </div>

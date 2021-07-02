@@ -31,10 +31,10 @@ const AddForm = ({ onAdd, addEvent }) => {
     } 
 
     return(
-        <div className="Add-Slot">
+        <div className="add-slot">
             <div style={flexBox}>
-                <div> <span style={AddLogo}>Add Event </span> <FaLeaf style={IconStyle1}/></div>
-                <AiFillCloseSquare style={IconStyle2} onClick={() => onAdd(false)}/>
+                <div> <span style={AddLogo}>Add Event </span> <FaLeaf style={iconStyle1}/></div>
+                <AiFillCloseSquare style={iconStyle2} onClick={() => onAdd(false)}/>
             </div>
             <div className="time-format" style={marginStyle}>
                 <div style={{display: 'flex'}}>
@@ -86,13 +86,13 @@ const AddLogo = {
     color: 'darkorchid',
 }
 
-const IconStyle1 = {
+const iconStyle1 = {
     fontSize: '24px',
     color: 'darkorchid',
     cursor: 'pointer'
 }
 
-const IconStyle2 = {
+const iconStyle2 = {
     fontSize: '24px',
     marginLeft: '25px',
     color: 'red',

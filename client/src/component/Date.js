@@ -41,10 +41,10 @@ const Date = ({ date, onUpdate }) => {
     }
 
     return(
-        <div className="Date">
+        <div className="date">
             <div style={flexBox}>
                 <div style={{marginLeft: '5px', fontSize: '20px'}}>{date.Day}</div>
-                <BiCommentAdd style={IconStyle1} onClick={() => setIsAdd(true)}/>
+                <BiCommentAdd style={iconStyle1} onClick={() => setIsAdd(true)}/>
             </div>
             { isAdd ?
                 <AddForm onAdd={onAdd} addEvent={addEvent}/>
@@ -62,7 +62,7 @@ const Date = ({ date, onUpdate }) => {
     );
 }
 
-const IconStyle1 = {
+const iconStyle1 = {
     fontSize: '24px',
     color: 'gray',
     cursor: 'pointer'

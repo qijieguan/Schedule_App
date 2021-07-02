@@ -10,7 +10,7 @@
   mix-blend-mode: unset;
 }
 
-.Header { 
+.header { 
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -21,7 +21,7 @@
   background-color: black;
 }
 
-.Logo {
+.logo {
   color: white;
   font-size: 28px;
   font-family: 'Courier New', Courier, monospace;
@@ -29,7 +29,7 @@
   letter-spacing: 1px;
 }
 
-.Side-Panel {
+.side-panel {
   top: '60px';
   position: absolute;
   height: 700px;
@@ -42,11 +42,11 @@
   z-index: 3;
 }
 
-.Side-Active {
+.side-active {
   transform: translateX(0%);
 }
 
-.Side-Li {
+.side-li {
   line-height: 70px;
   height: 70px;
   font-size: 18px;
@@ -55,12 +55,25 @@
   border-top: 1px solid darkorange;
 }
 
-.Side-Li:hover {
+.side-li:hover {
   color: black;
   background-color: darkorange;
 }
 
-.Calender {
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  height: 1000px;
+}
+
+.home:hover {
+  background-color: rgb(56, 56, 56);
+  color: darkorange;
+}
+
+.calender {
   min-height: 1000px;
   height: auto;
   width: 100%;
@@ -69,7 +82,7 @@
   border-radius: 25px;
 }
 
-.Month-Label {
+.month-label {
   text-align: center;
   font-size: 40px;
   font-weight: bold;
@@ -81,7 +94,7 @@
   border-radius: 25px 25px 0 0;
 }
 
-.Week {
+.week {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-auto-rows: 60px;
@@ -89,14 +102,14 @@
   width: 98%;
 }
 
-.Week-Label {
+.week-label {
   line-height: 60px;
   font-size: 20px;
   font-weight: bold;
   color: darkorange;
 }
 
-.Date-Grid {
+.date-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-auto-rows: minmax(150px, auto);
@@ -108,7 +121,7 @@
   width: 98%;
 }
 
-.Date {
+.date {
   text-align: left;
   font-size: 20px;
   font-weight: bold;
@@ -117,7 +130,7 @@
   border-color: darkorange;
 }
 
-.Add-Slot {
+.add-slot {
   justify-content: space-between;
   display: flex;
   flex-direction: column;
@@ -163,17 +176,11 @@
   border: 0;
 }
 
-.cancel-btn:hover {
-  background-color: darkorange;
-  color: white;
+.cancel-btn:hover, .submit-btn:hover {
+  opacity: 0.5;
 }
 
-.submit-btn:hover {
-  background-color: darkorange;
-  color: white;
-}
-
-.Slot {
+.slot {
   text-align: center;
   height: 20px;
   height: auto;
@@ -187,11 +194,11 @@
   box-shadow: 0 0 4px 0 black;
 }
 
-.Slot:hover {
+.slot:hover {
   background-color: firebrick;
 }
 
-.Slot-Expand {
+.slot-expand {
   display: inline-block;
   flex-direction: column;
   position: absolute;
@@ -208,7 +215,11 @@
   z-index: 2;
 }
 
-.About-Container {
+.btn:hover {
+  opacity: 0.5;
+}
+
+.about-container {
   display: flex;
   flex-direction: column;
   height: 1000px;
@@ -217,7 +228,7 @@
   color: white; 
 }
 
-.About-App {
+.about-app {
   height: 500px;
   width: 100%;
   border-bottom: 1px solid black;
@@ -225,7 +236,7 @@
   z-index: 1;
 }
 
-.About-Header {
+.about-header {
   text-align: center;
   margin-top: 70px;
   font-size: 50px;
@@ -233,7 +244,7 @@
   color: darkorange;
 }
 
-.About-Body {
+.about-body {
   margin: 75px 0 0 10%;
   width: 80%;
   font-size: 20px;
@@ -241,20 +252,20 @@
   color: darkorange;
 }
 
-.About-Me {
+.about-me {
   height: 500px;
   width: 100%;
   background-color: white;
 }
 
-.Task-Container {
+.task-container {
   margin: 50px 0 0 5%;
   height: auto;
   width: 90%;
   overflow: hidden;
 }
 
-.Create-List {
+.create-list {
   margin-left: 125px;
   float: left;
   display: inline-flex;
@@ -269,15 +280,15 @@
   cursor: pointer;
 }
 
-.List-Container {
-  display: flex;
-}
-
-.Create-List:hover {
+.create-list:hover {
   box-shadow: 3px 3px 3px 3px gray;
 }
 
-.List {
+.list-container {
+  display: flex;
+}
+
+.list {
   float: left;
   display: inline-flex;
   flex-direction: column;
@@ -285,12 +296,9 @@
   min-height: 400px;
   height: auto;
   width: 20%;
-  background-color: rgb(250, 200, 120);
-  border: 1px solid gray;
-  box-shadow: 1px 1px 1px 1px gray;
 }
 
-.List-Header {
+.list-header {
   margin-top: 10px;
   font-size: 24px;
   font-weight: bold;
@@ -299,27 +307,18 @@
   justify-content: space-around;
 }
 
-a {
-  text-decoration: none;
-  display: block;
-}
-
-.List:hover {
-  box-shadow: 3px 3px 3px 3px gray;
-}
-
-.List-Body {
+.list-body {
   margin-top: 15px;
   min-height: 250px;
   height: auto;
 }
 
-.Task-UL {
+.task-ul {
   height: 250px;
   height: auto;
 }
 
-.Task-Li {
+.task-li {
   height: auto;
   width: 90%;
   text-align: start;
@@ -330,14 +329,18 @@ a {
   word-wrap: break-word;
 }
 
-
-.List-Footer {
+.list-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 30px;
   height: 35px;
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  display: block;
 }
 
 input {
@@ -363,29 +366,16 @@ textarea {
   box-shadow: 0 0 1px 0 black;
 }
 
-.Home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  pointer-events: none;
-  height: 1000px;
-}
-
-.Home:hover {
-  background-color: rgb(56, 56, 56);
-  color: darkorange;
-}
-
-.Alarm-Clock {
+.alarm-clock {
   color: black;
   font-size: 250px;
-  top: 400px;
+  top: 425px;
   position: absolute;
   cursor: pointer;
   pointer-events: auto;
 }
 
-.Alarm-Clock:hover {
+.alarm-clock:hover {
   color: darkorange;
   animation: shake 0.5s;
   animation-iteration-count: infinite;

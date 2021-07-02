@@ -24,20 +24,20 @@ const Calender = () => {
             <Link to='/' style={{width: '50px'}}>
                 <BiArrowBack style={customStyle}/>
             </Link>
-            <div className="Calender">
-                <div className="Month-Label">
+            <div className="calender">
+                <div className="month-label">
                     January
                 </div>
-                <div className="Week">
-                    <div className="Week-Label">Sunday</div>
-                    <div className="Week-Label">Monday</div>
-                    <div className="Week-Label">Tuesday</div>
-                    <div className="Week-Label">Wednesday</div>
-                    <div className="Week-Label">Thursday</div>
-                    <div className="Week-Label">Friday</div>
-                    <div className="Week-Label">Saturday</div>
+                <div className="week">
+                    <div className="week-label">Sunday</div>
+                    <div className="week-label">Monday</div>
+                    <div className="week-label">Tuesday</div>
+                    <div className="week-label">Wednesday</div>
+                    <div className="week-label">Thursday</div>
+                    <div className="week-label">Friday</div>
+                    <div className="week-label">Saturday</div>
                 </div>
-                <div className="Date-Grid">
+                <div className="date-grid">
                     {DateArray.map(date => 
                         <Date key={date.Day} date={date}
                             onUpdate={onUpdate}

@@ -5,6 +5,7 @@ import uuid from 'react-uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import { setList } from './actions/index'
 
+
 const Task = () => {
 
     const ListArray = useSelector(state => state.listArray);
@@ -15,7 +16,13 @@ const Task = () => {
     }, []);
 
     const onCreate = () => {
-        dispatch(setList([...ListArray, {id: uuid(), Tasks: []}]));
+        dispatch( 
+            setList([...ListArray, {
+                id: uuid(), 
+                Tasks: [], 
+                Color: ["darkorange", "rgb(250, 200, 120)", "1px solid darkorange", "1px 1px 1px 1px darkorange"]
+            }])
+        );
     }
 
     const onDelete = (listID) => {
@@ -33,7 +40,7 @@ const Task = () => {
 
     return(
         <div>
-            <div className="Task-Container">
+            <div className="task-container">
                 <CreateTaskList onCreate={onCreate}/>
                 {
                     ListArray.length > 0 ?
