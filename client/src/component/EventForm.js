@@ -44,7 +44,7 @@ const AddForm = ({ onAdd, addEvent }) => {
                             name="start"
                             onChange={handleChange}
                             value={startTime}
-                            placeholder="0:00"
+                            placeholder="00:00"
                         />
                         <select id="startM" style={selectStyle}>
                             <option value="AM">AM</option>
@@ -55,7 +55,7 @@ const AddForm = ({ onAdd, addEvent }) => {
                             name="end"
                             onChange={handleChange}
                             value={endTime}
-                            placeholder="0:00"
+                            placeholder="00:00"
                         />
                         <select id= "endM"style={selectStyle}>
                             <option value="AM">AM</option>
@@ -83,12 +83,12 @@ const AddForm = ({ onAdd, addEvent }) => {
 
 const AddLogo = {
     fontSize: '20px',
-    color: 'darkorchid',
+    color: 'rgb(240, 240, 240)',
 }
 
 const iconStyle1 = {
     fontSize: '24px',
-    color: 'darkorchid',
+    color: 'rgb(240, 240, 240)',
     cursor: 'pointer'
 }
 

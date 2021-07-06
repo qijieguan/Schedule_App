@@ -1,5 +1,6 @@
 
 const About = () => {
+
     return(
         <div className="about-container">
             <div className="about-app">
@@ -17,17 +18,18 @@ const About = () => {
                 </p>
             </div>
             <div className="about-me">
-                <div className="about-header" style={{color: 'black'}}>
+                <div className="about-header" style={{color: 'black', borderBottom: '1px solid gray', paddingBottom: '30px'}}>
                     About Me
                 </div>
                 <p className="about-body" style={{color: 'black'}}>
-                    I was a former student who earned a bachelor's degree in Computer Science from University of California, 
-                    Riverside in 2020. Post graduation, I made my venture into web development and continued building web 
-                    projects using Javascript and CSS. My frontend framework consists of React, React-Native, Node.js. 
-                    Design bases of my web projects are multiple-page, hook logic, functional components, and Redux. My primary 
-                    backend framework includes Express and MySQL. I am capable of building server connection with databases 
-                    and recreate login functionalities with JWT. Currently, I am seeking for paid employment to contribute as a 
-                    frontend developer.  
+                    Enjoyed playing video games growing up as a kid. Witnessed the evolution of the digital media 
+                    from the 2000s to present. Due to those experiences, I am influenced to learn tools to develop 
+                    and experiment various web designs that can lead to enjoyable user experience. My current goal 
+                    is to create colorful and vibrant web applications for the next generation.
+                    <br/>
+                    <button className="viewBtn"
+                        onClick={() => {window.location.href="http://localhost:3000/profile"}}
+                    >View Profile</button>  
                 </p>
             </div>
         </div>

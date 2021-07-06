@@ -4,6 +4,7 @@ import Home from './component/Home.js';
 import Calender from './component/Calender.js';
 import Task from './component/Task.js';
 import About from './component/About.js';
+import MyProfile from './component/Profile.js';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { createStore } from 'redux';
 import allReducers from './component/reducers';
@@ -25,6 +26,7 @@ function App() {
             <Route path="/calender" component={Calender}/>
             <Route path="/task" component={Task}/>
             <Route path="/about" component={About}/>
+            <Route path="/profile" component={MyProfile}/>
           </Switch>
         </div>
       </Router>
