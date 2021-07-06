@@ -30,10 +30,10 @@ const Home = () => {
                 <div style={customStyle}>
                     <div/>
                     <button className="aboutBtn"
-                        onClick={() => {window.location.href="http://localhost:3000/about"}}
+                        onClick={() => {window.location.href="https://enigmatic-spire-34436.herokuapp.com/about"}}
                     >About Scheduler</button>
                     <button className="aboutBtn"
-                        onClick={() => {window.location.href="http://localhost:3000/profile"}}
+                        onClick={() => {window.location.href="https://enigmatic-spire-34436.herokuapp.com/profile"}}
                     >About Me</button>
                     <BsAlarm
                         className="alarm-clock"

@@ -28,7 +28,7 @@ const About = () => {
                     is to create colorful and vibrant web applications for the next generation.
                     <br/>
                     <button className="viewBtn"
-                        onClick={() => {window.location.href="http://localhost:3000/profile"}}
+                        onClick={() => {window.location.href="https://enigmatic-spire-34436.herokuapp.com/profile"}}
                     >View Profile</button>  
                 </p>
             </div>
