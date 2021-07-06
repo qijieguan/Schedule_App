@@ -336,8 +336,10 @@
   width: 100%;
 }
 
-.download {
+.view-file {
   margin: 50px 0 0 45%;
+  height: 40px;
+  line-height: 40px;
   width: 120px;
   font-size: 16px;
   font-weight: bold;
@@ -345,10 +347,17 @@
   background-color: rgb(150, 0, 150);
   border: 2px solid purple;
   border-radius: 5px;
+ 
 }
 
-.download:hover {
+.view-file:hover {
   opacity: 0.5;
+}
+
+.pdf-container {
+  min-height: 700px;
+  height: auto;
+  width: 100%;
 }
 
 .task-container {

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const MyProfile = () => {
 
@@ -71,7 +72,7 @@ const MyProfile = () => {
                     </ul>
                 </div>
             </div>
-            <div className="download">Download Resume</div>
+            <Link to="/pdf" className="view-file">View Resume</Link>
         </div>
     );
 }
