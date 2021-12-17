@@ -46,6 +46,7 @@
   box-shadow: 0 0 10px 0 black;
   transform: translateX(100%);
   transition: transform 0.5s ease-in;
+  background-color: darkorange;
 }
 
 .nav-menu:hover .nav-panel {
@@ -56,19 +57,20 @@
   height: 120px;
   line-height: 120px;
   font-size: 18px;
-  color: darkorange;
+  color: rgb(53, 53, 53);
+  background-color: darkorange;
 }
 
 .nav-li:hover {
-  color: black;
-  background-color: darkorange;
+  color: darkorange;
+  background-color: white;
 }
 
 .home {
   display: flex;
   flex-direction: column;
   height: 800px;
-  background-color: rgb(56, 56, 56);
+  background-color: orange;
 }
 
 .intro {
@@ -87,7 +89,7 @@
   width: 150px;
   font-size: 16px;
   color: rgb(240, 240, 240); 
-  background-color: rgb(56, 56, 56);
+  background-color: darkorange;
   border-radius: 10px;
   border: 2px solid rgb(240, 240, 240);
 }

@@ -10,16 +10,15 @@ const Home = () => {
     }
 
     const onLeave = () => {
-        document.getElementById('home').style.backgroundColor="rgb(56, 56, 56)"
-        document.getElementsByClassName("about-btn")[0].style.backgroundColor="rgb(56, 56, 56)";
-        document.getElementsByClassName("about-btn")[1].style.backgroundColor="rgb(56, 56, 56)";
+        document.getElementById('home').style.backgroundColor="orange"
+        document.getElementsByClassName("about-btn")[0].style.backgroundColor="darkorange";
+        document.getElementsByClassName("about-btn")[1].style.backgroundColor="darkorange";
     }
 
     return(
         <div className="home" id="home">
             <div className="intro">
-                <span style={wordStyle1}>Hello! I am Qi Jie.</span><br/> A front-end developer/UI Designer.  
-                Striving to design impactful websites and applications.<br/><br/> 
+                <span style={wordStyle1}>Welcome to my schedule app!</span><br/> Start planning your future by on a digital calender and lists<br/><br/> 
                 <span style={wordStyle2}>For more information, select the about options below! </span>
                 <br/><br/>
                 <div style={customStyle}>
@@ -57,7 +56,8 @@ const customStyle = {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     width: '100%',
-    overflowY: 'hidden'
+    overflowY: 'hidden',
+    height: '100px'
 }
 
 export default Home;
