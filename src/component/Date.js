@@ -28,6 +28,7 @@ const Date = ({ date, onUpdate }) => {
     const onDelete = (eventID) => {
         date.Slot = date.Slot.filter(e => e.id !== eventID);  
         onUpdate(date);
+        setRender(!Render);
     }
 
     const onEdit = (edits) => {   
@@ -44,7 +45,7 @@ const Date = ({ date, onUpdate }) => {
         <div className="date">
             <div style={flexBox}>
                 <div style={{marginLeft: '5px', fontSize: '20px'}}>{date.Day}</div>
-                <BiCommentAdd style={iconStyle1} onClick={() => setIsAdd(true)}/>
+                <BiCommentAdd style={iconStyle} onClick={() => setIsAdd(true)}/>
             </div>
             { isAdd ?
                 <AddForm onAdd={onAdd} addEvent={addEvent}/>
@@ -62,16 +63,15 @@ const Date = ({ date, onUpdate }) => {
     );
 }
 
-const iconStyle1 = {
+const iconStyle = {
     fontSize: '24px',
     color: 'gray',
-    cursor: 'pointer'
 }
 
 const flexBox = {
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    
 }
 
 export default Date;

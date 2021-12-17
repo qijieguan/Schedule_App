@@ -5,7 +5,6 @@ import Calender from './component/Calender.js';
 import Task from './component/Task.js';
 import About from './component/About.js';
 import MyProfile from './component/Profile.js';
-import ViewPDF from './component/Pdf.js';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { createStore } from 'redux';
 import allReducers from './component/reducers';
@@ -28,7 +27,6 @@ function App() {
             <Route path="/task" component={Task}/>
             <Route path="/about" component={About}/>
             <Route path="/profile" component={MyProfile}/>
-            <Route path="/pdf" component={ViewPDF}/>
           </Switch>
         </div>
       </Router>

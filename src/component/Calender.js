@@ -21,7 +21,7 @@ const Calender = () => {
 
     return(
         <div style={{display: 'flex', flexDirection: 'column'}}>
-            <Link to='/' style={{width: '50px'}}>
+            <Link to='/'style={{alignSelf: 'start'}}>
                 <BiArrowBack style={customStyle}/>
             </Link>
             <div className="calender">
@@ -52,7 +52,7 @@ const Calender = () => {
 const customStyle = {
     fontSize: '60px',
     color: 'darkorange',
-    margin: '5px 0 5px 20px',
+    margin: '20px 0 30px 20px',
 }
 
 export default Calender;

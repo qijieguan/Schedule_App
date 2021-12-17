@@ -22,7 +22,7 @@ const ViewEvent = ({ event, onDelete, onEdit }) => {
             onMouseLeave={() => setViewItem(false)}
         >
             <div className="slot">
-                <span>{event.Time[0]} {event.Time[1]} to {event.Time[2]} {event.Time[3]}</span>
+                <span style={{display: 'flex'}}>{event.Time[0]} {event.Time[1]} to {event.Time[2]} {event.Time[3]}</span>
             </div>
             {viewItem ?
                 <div className="slot-expand">
@@ -31,7 +31,7 @@ const ViewEvent = ({ event, onDelete, onEdit }) => {
                         {event.Time[0]} {event.Time[1]} to {event.Time[2]} {event.Time[3]}
                     </div>
                     <div style={heightStyle}> 
-                        <span style={fontStyle}>Details: </span> 
+                        <span style={fontStyle}>Details: </span>
                         {isEdit ? 
                             <textarea
                                 value={details}
@@ -61,12 +61,11 @@ const ViewEvent = ({ event, onDelete, onEdit }) => {
 const heightStyle = {
     minHeight: '100px',
     height: 'auto',
-    color: 'black'
+    color: 'black',
 }
 
 const fontStyle = {
     fontSize: '16px',
-    fontWeight: 'bold',
     color: 'black'
 }
 

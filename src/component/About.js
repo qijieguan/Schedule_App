@@ -18,7 +18,7 @@ const About = () => {
                 </p>
             </div>
             <div className="about-me">
-                <div className="about-header" style={{color: 'black', borderBottom: '1px solid gray', paddingBottom: '30px'}}>
+                <div className="about-header" style={{ borderBottom: '1px solid gray', paddingBottom: '20px'}}>
                     About Me
                 </div>
                 <p className="about-body" style={{color: 'black'}}>
@@ -27,7 +27,7 @@ const About = () => {
                     and experiment various web designs that can lead to enjoyable user experience. My current goal 
                     is to create colorful and vibrant web applications for the next generation.
                     <br/>
-                    <button className="viewBtn"
+                    <button className="view-btn"
                         onClick={() => {window.location.href="/profile"}}
                     >View Profile</button>  
                 </p>

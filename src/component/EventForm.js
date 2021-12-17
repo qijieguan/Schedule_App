@@ -37,8 +37,8 @@ const AddForm = ({ onAdd, addEvent }) => {
                 <AiFillCloseSquare style={iconStyle2} onClick={() => onAdd(false)}/>
             </div>
             <div className="time-format" style={marginStyle}>
-                <div style={{display: 'flex'}}>
-                    <span style={{margin: '5px 5px 0 0'}}>Time:  </span>
+                <div>
+                    <span>Time:</span>
                     <span style={{display: 'block'}}>
                         <input style={inputStyle} 
                             name="start"
@@ -104,6 +104,7 @@ const marginStyle = {
 }
 
 const inputStyle = {
+    margin: '10px 0 0 40px',
     width: '70px', 
     height: '30px'
 }

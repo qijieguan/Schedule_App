@@ -28,6 +28,7 @@ const List = ({ list, onDelete, onAdd }) => {
     }
 
     const handleChange = event => {
+        event.preventDefault();
         setTask(event.target.value);
     }
 

@@ -4,36 +4,33 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
 
-    const SideToggle = () => {
-        const nav = document.querySelector(".side-panel");
-        nav.classList.toggle("side-active");
-    }
-
     return (
-        <div>
-            <div className="header">
+        <header>
+            <div className="nav-bar">
                 <div className="logo">
                     SCHEDULER
                 </div>
-                <AiOutlineMenu style={customStyle} onClick={SideToggle}/>
+                <nav className="nav-menu">
+                    <AiOutlineMenu style={customStyle}/>
+                    <div className="nav-panel" >
+                        <div>
+                            <Link to="/" className="nav-li">
+                                Home
+                            </Link>
+                            <Link to="/calender" className="nav-li">
+                                Calender
+                            </Link>
+                            <Link to="/task" className="nav-li">
+                                Task
+                            </Link>
+                            <Link to="/about" className="nav-li">
+                                About
+                            </Link>
+                        </div>
+                    </div>
+                </nav>
             </div>
-            <div className="side-panel" >
-                <div style={borderStyle}>
-                    <Link to="/" className="side-li">
-                        Home
-                    </Link>
-                    <Link to="/calender" className="side-li">
-                        Calender
-                    </Link>
-                    <Link to="/task" className="side-li">
-                        Task
-                    </Link>
-                    <Link to="/about" className="side-li">
-                        About
-                    </Link>
-                </div>
-            </div>
-        </div>
+        </header>
     );
 }
 
@@ -42,13 +39,7 @@ const customStyle = {
     fontSize: '25px',
     left: '95%',
     position: 'absolute',
-    cursor: 'pointer'
 }
 
-
-const borderStyle = {
-    borderBottom: '1px solid',
-    borderColor: 'darkorange'
-}
 
 export default Header;
