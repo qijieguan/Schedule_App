@@ -18,8 +18,11 @@ const Home = () => {
     return(
         <div className="home" id="home">
             <div className="intro">
-                <span style={wordStyle1}>Welcome to my schedule app!</span><br/> Start planning your future by on a digital calender and lists<br/><br/> 
-                <span style={wordStyle2}>For more information, select the about options below! </span>
+                <div className='intro-text'>
+                    <h1 style={wordStyle1}>Welcome to my schedule app!</h1> 
+                    Start planning your future by on a digital calender and lists<br/><br/> 
+                    <span style={wordStyle2}>For more information, select the about options below! </span>
+                </div>
                 <br/><br/>
                 <div style={customStyle}>
                     <div/>
