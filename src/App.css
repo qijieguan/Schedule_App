@@ -9,10 +9,10 @@
 }
 
 .App {
-  background-color: rgb(220, 220, 220);
   min-height: 700px;
   mix-blend-mode: unset;
   text-align: center;
+  background: radial-gradient(rgb(255, 227, 176), rgb(199, 199, 199));;
 }
 
 .nav-bar { 
@@ -20,7 +20,7 @@
   width: 100%;
   height: 60px;
   box-shadow: 0 0 10px 0 black;
-  background-color: black;
+  background: black;
 }
 
 .logo {
@@ -41,12 +41,12 @@
   right: 0;
   height: 700px;
   width: 250px;
-  background-color: rgb(56, 56, 56);
+  background: rgb(56, 56, 56);
   border-radius: 0 0 5px 0;
   box-shadow: 0 0 10px 0 black;
   transform: translateX(100%);
   transition: transform 0.5s ease-in;
-  background-color: darkorange;
+  background: darkorange;
 }
 
 .nav-menu:hover .nav-panel {
@@ -58,19 +58,20 @@
   line-height: 120px;
   font-size: 18px;
   color: rgb(53, 53, 53);
-  background-color: darkorange;
+  background: darkorange;
 }
 
 .nav-li:hover {
   color: darkorange;
-  background-color: white;
+  background: white;
 }
 
 .home {
   display: flex;
   flex-direction: column;
   height: 800px;
-  background-color: orange;
+  background: orange;
+  background: radial-gradient(rgb(255, 198, 93), orange);
 }
 
 .intro {
@@ -93,7 +94,7 @@
   width: 150px;
   font-size: 16px;
   color: rgb(240, 240, 240); 
-  background-color: darkorange;
+  background: darkorange;
   border-radius: 10px;
   border: 2px solid rgb(240, 240, 240);
 }
@@ -101,7 +102,7 @@
 .calender {
   min-height: 1000px;
   width: 100%;
-  background-color: rgb(56, 56, 56);
+  background: rgb(56, 56, 56);
   box-shadow: 10px 0 10px 0 black;
   border-radius: 25px 25px 0 0;
 }
@@ -161,7 +162,7 @@
   border: 1px solid purple;
   border-radius: 5px;
   color: rgb(240, 240, 240);
-  background-color: purple;
+  background: purple;
   z-index: 2;
 }
 
@@ -172,7 +173,7 @@
 
 .cancel-btn {
   font-size: 16px;
-  background-color: red;
+  background: red;
   color: white;
   height: 50px;
   width: 50%;
@@ -181,7 +182,7 @@
 
 .submit-btn {
   font-size: 16px;
-  background-color: darkorchid;
+  background: darkorchid;
   color: white;
   height: 50px;
   width: 50%;
@@ -193,13 +194,13 @@
   margin: 10px 0 0 2.5%;
   width: 98%;
   color: white;
-  background-color: darkorchid;
+  background: darkorchid;
   border-radius: 10px;
   box-shadow: 0 0 4px 0 black;
 }
 
 .slot:hover {
-  background-color: firebrick;
+  background: firebrick;
 }
 
 .slot-expand {
@@ -213,7 +214,7 @@
   font-size: 16px;
   font-family: cursive;
   box-shadow: 0 0 10px 0 black;
-  background-color: white;
+  background: white;
   z-index: 2;
 }
 
@@ -221,7 +222,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: rgb(56, 56, 56);
+  background: rgb(56, 56, 56);
   color: white; 
 }
 
@@ -256,13 +257,13 @@
   border-radius: 5px;
   border: 1px solid grey;
   color: grey;
-  background-color: rgb(240, 240, 240);
+  background: rgb(240, 240, 240);
 }
 
 .about-me {
   padding-bottom:  50px;  
   width: 100%;
-  background-color: rgb(240, 240, 240);
+  background: rgb(240, 240, 240);
   display: flex;
   flex-direction: column;
 }
@@ -271,7 +272,7 @@
   height: 800px;
   padding-bottom: 50px;  
   width: 100%;
-  background-color: rgb(240, 240, 240);
+  background: rgb(240, 240, 240);
 }
 
 .profile-header {
@@ -305,7 +306,7 @@
   width: 120px;
   font-size: 16px;
   color: rgb(240, 240, 240);
-  background-color: rgb(150, 0, 150);
+  background: rgb(150, 0, 150);
   border: 2px solid purple;
   border-radius: 5px;
 }
@@ -327,7 +328,7 @@
   flex-direction: column;
   height: 350px;
   width: 18%;
-  background-color: rgb(200, 200, 200);
+  background: rgb(200, 200, 200);
   border: 1px solid gray;
   border-radius: 10px;
   cursor: pointer;
@@ -417,8 +418,7 @@ textarea {
 
 .alarm-clock:hover {
   color: darkorange;
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
+  animation: shake 0.5s infinite;
 }
 
 @keyframes shake {
@@ -438,8 +438,14 @@ textarea {
 @keyframes fadeIn {
   0% {
     opacity: 0;
+    color: orange;
+  }
+  50% {
+    opacity: 0.5;
+    color: navy; 
   }
   100% {
     opacity: 1;
+    color: white;
   }
 }
