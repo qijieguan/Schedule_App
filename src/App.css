@@ -12,7 +12,7 @@
   min-height: 700px;
   mix-blend-mode: unset;
   text-align: center;
-  background: radial-gradient(rgb(255, 227, 176), rgb(199, 199, 199));;
+  background: rgb(228, 228, 228);
 }
 
 .nav-bar { 
@@ -67,11 +67,20 @@
 }
 
 .home {
+  position: relative;
   display: flex;
   flex-direction: column;
-  height: 800px;
-  background: orange;
-  background: radial-gradient(rgb(255, 198, 93), orange);
+  height: 700px;
+  background: url("https://images.pexels.com/photos/277458/pexels-photo-277458.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.4;
 }
 
 .intro {
@@ -85,7 +94,7 @@
 
 .intro-text {
   font-size: 32px;
-  animation: fadeIn 4s linear infinite alternate;
+  animation: fadeIn 2s linear infinite alternate;
 }
 
 .about-btn {
@@ -93,8 +102,8 @@
   height: 50px;
   width: 150px;
   font-size: 16px;
-  color: rgb(240, 240, 240); 
-  background: darkorange;
+  color: white;
+  background: transparent;
   border-radius: 10px;
   border: 2px solid rgb(240, 240, 240);
 }
@@ -417,7 +426,6 @@ textarea {
 }
 
 .alarm-clock:hover {
-  color: darkorange;
   animation: shake 0.5s infinite;
 }
 
@@ -432,20 +440,15 @@ textarea {
   70% { transform: translate(3px, 1px) rotate(-1deg); }
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg) };
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    color: orange;
-  }
-  50% {
-    opacity: 0.5;
-    color: navy; 
+
   }
   100% {
     opacity: 1;
-    color: white;
   }
 }

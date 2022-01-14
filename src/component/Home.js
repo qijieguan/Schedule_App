@@ -3,20 +3,9 @@ import { BsAlarm } from 'react-icons/bs';
 
 const Home = () => {
 
-    const onMove = () => {
-        document.getElementById('home').style.background="purple";
-        document.getElementsByClassName('about-btn')[0].style.background="purple";
-        document.getElementsByClassName('about-btn')[1].style.background="purple";
-    }
-
-    const onLeave = () => {
-        document.getElementById('home').style.backgroundColor="orange"
-        document.getElementsByClassName("about-btn")[0].style.background="darkorange";
-        document.getElementsByClassName("about-btn")[1].style.background="darkorange";
-    }
-
     return(
         <div className="home" id="home">
+            <div className='overlay'/>
             <div className="intro">
                 <div className='intro-text'>
                     <h1 style={wordStyle1}>Welcome to my schedule app!</h1> 
@@ -34,8 +23,6 @@ const Home = () => {
                     >About Me</button>
                     <BsAlarm
                         className="alarm-clock"
-                        onMouseMove={onMove}
-                        onMouseLeave={onLeave}
                     />
                 </div>
             </div>
