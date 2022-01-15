@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Clock = () => {
+const Clock = ({getTime}) => {
 
     const [time, setTime] = useState("00:00:00 AM");
     const [period, setPeriod] = useState("Am");
@@ -31,6 +31,7 @@ const Clock = () => {
         setDate(week[day] + ", " + months[month] + " " + dateN + ", " + year);
         setTime(hours + ':' + minutes + ':' + seconds + " "); 
         setPeriod(period);
+        getTime([parseInt(hours), period]);
     }
 
     const initClock = () => {window.setInterval(() => updateClock(), 1);}

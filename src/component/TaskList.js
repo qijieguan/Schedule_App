@@ -47,38 +47,38 @@ const List = ({ list, onDelete, onAdd }) => {
             list.Color[0] = "cornflowerblue"
             list.Color[1] = "rgb(150, 200, 255)";
             list.Color[2] = "1px solid cornflowerblue"
-            list.Color[3] = '1px 1px 1px 1px cornflowerblue';
+            list.Color[3] = '1px 1px 1px cornflowerblue';
         }
         else if (list.Color[0] === "cornflowerblue"){
             list.Color[0] = "green"
             list.Color[1] = "lightgreen"
             list.Color[2] = "1px solid green";
-            list.Color[3] = "1px 1px 1px 1px green";
+            list.Color[3] = "1px 1px 1px green";
         }
         else if (list.Color[0] === "green") {
             list.Color[0] = "darkviolet"
             list.Color[1] = "violet"
             list.Color[2] = "1px solid darkviolet";
-            list.Color[3] = "1px 1px 1px 1px darkviolet";
+            list.Color[3] = "1px 1px 1px darkviolet";
         }
         else if (list.Color[0] === 'darkviolet') {
             list.Color[0] = "goldenrod"
             list.Color[1] = "gold"
             list.Color[2] = "1px solid goldenrod";
-            list.Color[3] = "1px 1px 1px 1px goldenrod";
+            list.Color[3] = "1px 1px 1px goldenrod";
         }
         else {
             list.Color[0] = "darkorange"
             list.Color[1] = "rgb(250, 200, 120)"
             list.Color[2] = "1px solid darkorange";
-            list.Color[3] = "1px 1px 1px 1px darkorange";
+            list.Color[3] = "1px 1px 1px darkorange";
         }
         onAdd(list);
         setRender(!Render);
     }
 
     const onMove = () => {
-        document.getElementById(list.id).style.boxShadow = "3px 3px 3px 3px " + list.Color[0];
+        document.getElementById(list.id).style.boxShadow = `3px 4px 5px ${list.Color[0]}, -2px 2px 4px ${list.Color[0]}`;
     }
 
     const onLeave = () => {

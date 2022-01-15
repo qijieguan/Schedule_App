@@ -121,6 +121,11 @@
   z-index: 1;
 }
 
+.clock:hover {
+  background-color: rgb(30, 30, 161);
+  box-shadow: 2px 2px 3px navy, -1px -1px 3px navy;
+}
+
 .clock-date {
   font-size: 20px;
   color: white;
@@ -348,7 +353,8 @@
 }
 
 .task-container {
-  margin: 50px 0 0 5%;
+  padding: 50px 0 0 5%;
+  min-height: 800px;
   width: 90%;
   overflow: hidden;
 }
@@ -364,10 +370,11 @@
   border: 1px solid gray;
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: 1px 3px 4px grey;
 }
 
 .create-list:hover {
-  box-shadow: 3px 3px 3px 3px gray;
+  box-shadow: 3px 3px 3px gray;
 }
 
 .list-container {
