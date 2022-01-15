@@ -1,5 +1,4 @@
-import { BsAlarm } from 'react-icons/bs';
-
+import Clock from './Clock.js';
 
 const Home = () => {
 
@@ -8,8 +7,8 @@ const Home = () => {
             <div className='overlay'/>
             <div className="intro">
                 <div className='intro-text'>
-                    <h1 style={wordStyle1}>Welcome to my schedule app!</h1> 
-                    Start planning your future by on a digital calender and lists<br/><br/> 
+                    <h1 style={wordStyle1}>Good day! How are you feeling?</h1> 
+                    Start planning your day on a digital calender or write them down!<br/><br/> 
                     <span style={wordStyle2}>For more information, select the about options below! </span>
                 </div>
                 <br/><br/>
@@ -21,11 +20,9 @@ const Home = () => {
                     <button className="about-btn"
                         onClick={() => {window.location.href="/profile"}}
                     >About Me</button>
-                    <BsAlarm
-                        className="alarm-clock"
-                    />
                 </div>
             </div>
+            <Clock/>
         </div>
     );
 };
