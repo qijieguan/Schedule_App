@@ -32,11 +32,7 @@ const Date = ({ date, onUpdate }) => {
     }
 
     const onEdit = (edits) => {   
-        date.Slot.forEach(e => {
-            if (e.id === edits.id) { 
-                e.Content = edits.Content;
-            }
-        });
+        date.Slot.forEach(e => {if (e.id === edits.id) { e.Content = edits.Content;}});
         onUpdate(date);
         setRender(!Render);
     }
@@ -44,20 +40,13 @@ const Date = ({ date, onUpdate }) => {
     return(
         <div className="date">
             <div style={flexBox}>
-                <div style={{marginLeft: '5px', fontSize: '20px'}}>{date.Day}</div>
+                <div style={{marginLeft: '5px', fontSize: '20px', color: 'orange'}}>{date.Day}</div>
                 <BiCommentAdd style={iconStyle} onClick={() => setIsAdd(true)}/>
             </div>
-            { isAdd ?
-                <AddForm onAdd={onAdd} addEvent={addEvent}/>
-                :
-                ""
-            }
+            { isAdd ? <AddForm onAdd={onAdd} addEvent={addEvent}/> : ""}
             { date.Slot.length > 0 ?
-                date.Slot.map(event => 
-                    <ViewEvent key={event.id} event={event} onDelete={onDelete} onEdit={onEdit}/>
-                )
-                :
-                ""
+                date.Slot.map(event => <ViewEvent key={event.id} event={event} onDelete={onDelete} onEdit={onEdit}/>)
+                :""
             }
         </div>
     );
@@ -65,7 +54,7 @@ const Date = ({ date, onUpdate }) => {
 
 const iconStyle = {
     fontSize: '24px',
-    color: 'gray',
+    color: 'limegreen',
 }
 
 const flexBox = {

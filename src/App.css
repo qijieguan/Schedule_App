@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
 * {
   font-size: 14px;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   align-items: center;
   justify-content: center;
   width: auto;
   height: auto;
+  box-sizing: border-box;
   overflow-x: hidden;
 }
 
@@ -19,15 +23,15 @@
   display: flex;
   width: 100%;
   height: 60px;
-  box-shadow: 0 0 10px 0 black;
+  box-shadow: 0 0 10px black;
   background: black;
 }
 
 .logo {
+  font-family: sans-serif;
+  font-size: 32px;
+  text-shadow: 2px 2px grey;
   color: white;
-  font-size: 28px;
-  font-family: 'Courier New', Courier, monospace;
-  letter-spacing: 1px;
 }
 
 .nav-menu {
@@ -43,7 +47,7 @@
   width: 250px;
   background: rgb(56, 56, 56);
   border-radius: 0 0 5px 0;
-  box-shadow: 0 0 10px 0 black;
+  box-shadow: 0 0 10px black;
   transform: translateX(100%);
   transition: transform 0.5s ease-in;
   background: darkorange;
@@ -121,11 +125,6 @@
   z-index: 1;
 }
 
-.clock:hover {
-  background-color: rgb(30, 30, 161);
-  box-shadow: 2px 2px 3px navy, -1px -1px 3px navy;
-}
-
 .clock-date {
   font-size: 20px;
   color: white;
@@ -137,15 +136,12 @@
 }
 
 .calender {
-  min-height: 1000px;
-  width: 100%;
+  margin-bottom: 50px;
+  min-height: 700px;
+  width: 97.5%;
   background: rgb(56, 56, 56);
-  box-shadow: 10px 0 10px 0 black;
+  box-shadow: 0 0 10px black;
   border-radius: 25px 25px 0 0;
-}
-
-.calender * {
-  color: darkorange;
 }
 
 .month-label {
@@ -153,6 +149,7 @@
   font-family:'Times New Roman', Times, serif;
   height: 70px;
   line-height: 70px;
+  color: orange;
   border-radius: 25px 25px 0 0;
 }
 
@@ -166,6 +163,7 @@
 .week-label {
   line-height: 60px;
   font-size: 20px;
+  color: orange;
 }
 
 .date-grid {
@@ -173,7 +171,9 @@
   grid-template-columns: repeat(7, 1fr);
   grid-auto-rows: repeat(5, auto);
   border: 3px solid darkorange;
-  margin-left: 1%;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  margin: 0 0 40px 1%;
   width: 98%;
 }
 
@@ -192,14 +192,13 @@
   justify-content: space-between;
   flex-direction: column;
   min-height: 325px;
-  width: 250px;
-  font-size: 16px;
+  width: 275px;
+  font-size: 20px;
   font-family: cursive;
-  box-shadow: 0 0 10px 0 purple;
-  border: 1px solid purple;
-  border-radius: 5px;
   color: rgb(240, 240, 240);
   background: purple;
+  box-shadow: 1px 2px 5px purple;
+  border-radius: 3px;
   z-index: 2;
 }
 
@@ -208,49 +207,37 @@
   width: 100%;
 }
 
-.cancel-btn {
+.cancel-btn, .submit-btn {
   font-size: 16px;
-  background: red;
-  color: white;
   height: 50px;
   width: 50%;
-  border: 0;
-}
-
-.submit-btn {
-  font-size: 16px;
-  background: darkorchid;
   color: white;
-  height: 50px;
-  width: 50%;
   border: 0;
 }
 
 .slot {
-  height: 20px;
-  margin: 10px 0 0 2.5%;
+  display: flex;
+  height: 23px;
   width: 98%;
   color: white;
   background: darkorchid;
   border-radius: 10px;
-  box-shadow: 0 0 4px 0 black;
+  box-shadow: 0 0 4px black;
 }
 
-.slot:hover {
-  background: firebrick;
-}
+.slot:hover {background: firebrick;}
 
 .slot-expand {
   display: inline-block;
   flex-direction: column;
   position: absolute;
   margin-left: 15px;
-  padding: 10px 0 0 10px;
+  padding: 10px;
   min-height: 200px;
   width: 250px;
   font-size: 16px;
   font-family: cursive;
-  box-shadow: 0 0 10px 0 black;
+  box-shadow: 0 0 10px black;
   background: white;
   z-index: 2;
 }
@@ -267,8 +254,6 @@
   padding: 10px 0 50px 0;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid black;
-  box-shadow: 0 0 100px 0 black;
 }
 
 .about-header {
@@ -291,18 +276,20 @@
   height: 40px;
   width: 125px;
   font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid grey;
   color: grey;
   background: rgb(240, 240, 240);
+  border-radius: 5px;
+  border: 1px solid grey;
 }
 
+.view-btn:hover {opacity: 0.5;}
+
 .about-me {
+  display: flex;
+  flex-direction: column;
   padding-bottom:  50px;  
   width: 100%;
   background: rgb(240, 240, 240);
-  display: flex;
-  flex-direction: column;
 }
 
 .profile-container {
@@ -330,10 +317,10 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
-  box-shadow: 1px 1px 1px 1px grey;
   margin-top: 50px;
   padding-bottom: 20px;
   width: 100%;
+  box-shadow: 0 0 10px grey;
 }
 
 .view-file {
@@ -356,7 +343,6 @@
   padding: 50px 0 0 5%;
   min-height: 800px;
   width: 90%;
-  overflow: hidden;
 }
 
 .create-list {
@@ -365,20 +351,16 @@
   display: inline-flex;
   flex-direction: column;
   height: 350px;
-  width: 18%;
+  width: 20%;
   background: rgb(200, 200, 200);
   border: 1px solid gray;
   border-radius: 10px;
-  cursor: pointer;
   box-shadow: 1px 3px 4px grey;
 }
 
 .create-list:hover {
   box-shadow: 3px 3px 3px gray;
-}
-
-.list-container {
-  display: flex;
+  opacity: 0.8;
 }
 
 .list {
@@ -399,6 +381,8 @@
   font-family: cursive;
 }
 
+.list-header *:hover {opacity: 0.5;}
+
 .list-body {
   margin-top: 15px;
   min-height: 250px;
@@ -406,7 +390,6 @@
 }
 
 .task-li {
-  overflow-x: unset;
   text-align: left;
   font-size: 20px;
   font-family: cursive;
@@ -417,44 +400,43 @@
 
 .list-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 30px;
   height: 50px;
+  width: 100%;
 }
+
+.list-footer-li:hover {opacity: 0.5;}
 
 a {
   text-decoration: none;
   display: block;
 }
 
-input {
-  width: 80%;
-  border: 1px solid gray;
-  box-shadow: 0 0 1px 0 black;
+input, textarea {
   margin-bottom: 10px;
+  width: 80%;
+  font-size: 16px;
+  font-family: sans-serif;
+  box-shadow: 1px 1px 1px grey;
+  border: 0;
+  border-radius: 3px;
+  outline: none;
+}
+
+textarea {
+  min-height: 100px;
+  border: 1px solid grey;
 }
 
 select {
   border-top: 1px solid gray;
   border-right: 1px solid gray;
   border-bottom: 1px solid gray;
-  box-shadow: 0 0 1px 0 black;
-}
-
-textarea {
-  margin: 15px 0;
-  width: 90%;
-  min-height: 75px;
-  border: 1px solid gray;
-  box-shadow: 0 0 1px 0 black;
+  box-shadow: 0 0 1px black;
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-
-  }
-  100% {
-    opacity: 1;
-  }
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }

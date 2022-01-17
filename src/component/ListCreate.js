@@ -16,7 +16,6 @@ const CreateTaskList = ({ onCreate }) => {
 
 const customStyle = {
     fontSize: '20px',
-    fontWeight: 'bold',
     color: 'gray',
 }
 

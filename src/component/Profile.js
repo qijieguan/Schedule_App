@@ -76,20 +76,17 @@ const MyProfile = () => {
 
 const wordStyle1 = {
     fontSize: '20px',
-    fontWeight: 'bold',
     color: 'indianred'
 }
 
 const wordStyle2 = {
     margin: '0 0 10px 50px',
     fontSize: '20px',
-    fontWeight: 'bold',
     color: 'navy'
 }
 
 const fontStyle = {
     fontSize: '16px',
-    fontWeight: 'bold',
     marginLeft: '50px',
     textAlign: 'left',
 }
@@ -110,7 +107,6 @@ const imgStyle = {
 
 const nameStyle = {
     fontSize: '20px',
-    fontWeight: 'bold',
     height: '50px',
     lineHeight: '40px'
 }
